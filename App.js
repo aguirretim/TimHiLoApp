@@ -5,12 +5,13 @@
  * @format
  * @flow strict-local
  */
-
 import React, {useState} from 'react';
 import Header from './components/Header';
 import ScoreSection from './components/ScoreSection';
 import PlayButton from './components/PlayButton';
 import HiLoButtons from './components/HiLoButtons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -143,10 +144,43 @@ class App extends React.Component {
     }
   };
 
-  render(): React$Node {
+  onSubmit = async () => {
+    try {
+      // this.setState({HiScore: this.state.currentGameScore});
+      await AsyncStorage.setItem('@storage_Key', '' + this.state.HiScore);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  constructor(props) {
+    super(props);
+    this.getHiScore();
+  }
+
+  getHiScore = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@storage_Key');
+      if (value !== null) {
+        // value previously stored
+        this.setState({HiScore: value});
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
+
+  newHighScoreCreator = () => {
     if (this.state.currentGameScore > this.state.HiScore) {
       this.setState({HiScore: this.state.currentGameScore});
+      this.onSubmit();
     }
+  };
+  componentDidUpdate() {
+    this.newHighScoreCreator();
+  }
+
+  render(): React$Node {
     return (
       <>
         <StatusBar barStyle="dark-content" />
