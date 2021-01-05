@@ -24,12 +24,12 @@ const HiLoButtons = (props) => {
 
 const styles = StyleSheet.create({
   mainText: {
-    fontSize: 116,
+    fontSize: 60,
     color: '#146605',
     textAlign: 'center',
   },
   subText: {
-    fontSize: 116,
+    fontSize: 60,
     color: '#146605',
     textAlign: 'center',
   },

@@ -28,7 +28,7 @@ class PlayButton extends React.Component {
 
 const styles = StyleSheet.create({
   PlayButton: {
-    fontSize: 130,
+    fontSize: 70,
     color: '#146605',
     textAlign: 'center',
   },
