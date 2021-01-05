@@ -134,7 +134,6 @@
 				E3072D38846D03DE95399C65 /* Pods-TimHiLoApp-tvOSTests.debug.xcconfig */,
 				106CB1CBF9A85545E53B82FD /* Pods-TimHiLoApp-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
