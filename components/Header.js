@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 38,
     textAlign: 'center',
+    marginTop: 10,
     marginBottom: 20,
   },
   subText: {
