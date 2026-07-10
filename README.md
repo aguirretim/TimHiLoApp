@@ -2,6 +2,9 @@
 
 A fun High/Low card prediction mobile game built with React Native. Guess whether the next card will be higher or lower than the current one.
 
+![TimHiLoApp running on-device](docs/screenshot.png)
+*The start screen on an Android device — "Welcome to the High Low Game" with the Start button and the Score / HI Score tracker along the bottom.*
+
 ## Features
 - Random card draws
 - High / Low prediction gameplay
